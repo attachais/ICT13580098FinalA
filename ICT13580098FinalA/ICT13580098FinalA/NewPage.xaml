@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ICT13580098FinalA.NewPage">
+    <ScrollView
+        Orientation="Vertical"
+        Padding="40">
+        <StackLayout
+            Orientation="Vertical">
+
+            <Label
+                x:Name="titleLabel"
+                Text="เพิ่มข้อมูลพนักงานใหม่"
+                Margin="0,0,0,30"
+                HorizontalOptions="Center"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="Black"/>
+            <Label
+            Text="ชื่่อ-นามสกุล"
+            TextColor="#000"/>
+            <Entry
+            x:Name="nameEntry"
+            Placeholder="ชื่อ"/>
+            <Entry
+            x:Name="lastNameEntry"
+            Placeholder="นามสกุล"/>
+            
+            <Label
+            Text="อายุ"/>
+            <Entry
+                x:Name="ageEntry"
+                Placeholder="อายุ"
+                Keyboard="Numeric"/>
+
+            <Label
+                Text="เพศ"/>
+            <Picker
+                x:Name="genderPicker"
+                Title="เพศ"/>
+
+            <Label
+                Text="แผนก"/>
+            <Picker
+                x:Name="sectionPicker"
+                Title="แผนก"/>
+
+            <Label
+                Text="เบอร์ติดต่อ"/>
+            <Entry
+                x:Name="telEntry"
+                Placeholder="เบอร์โทรศัพท์"
+                Keyboard="Telephone"/>
+
+            <Label
+                Text="E-mail"/>
+            <Entry
+                x:Name="emailEntry"
+                Placeholder="E-mail"
+                Keyboard="Email"/>
+
+            <Label
+                Text="ที่อยู่"/>
+            <Editor
+                x:Name="addressEditor"
+                HeightRequest="100"/>
+
+
+            <Label
+                Text="สถานะภาพ"/>
+            <Picker
+                x:Name="statusPicker"
+                Title="สถานะ"/>
+
+            <Label
+                Text="จำนวนบุตร"/>
+            <Label
+                x:Name="valueLabel"
+                Text="0"/>
+            <Stepper
+            x:Name="myStepper"
+            Maximum="10"
+            Minimum="0"
+            Value="0"
+            Increment="1"/>
+
+            <Label
+                Text="เงินเดือน"/>
+            <Label
+            x:Name="salaryLabel"
+            Text="0"/>
+            <Slider
+            x:Name="mySlider"
+            Maximum="200000"
+            Minimum="0"
+            Value="10000"/>
+
+
+            <StackLayout
+            Orientation="Horizontal"
+            Margin="0,30,0,0">
+                <Button
+                x:Name="saveButton"
+                Text="save"
+                BackgroundColor="Green"
+                TextColor="White"
+                HorizontalOptions="FillAndExpand"/>
+                <Button
+                x:Name="cancleButton"
+                Text="Cancle"
+                BackgroundColor="Red"
+                HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+</ContentPage>

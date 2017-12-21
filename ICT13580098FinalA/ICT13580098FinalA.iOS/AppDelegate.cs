@@ -23,7 +23,10 @@ namespace ICT13580098FinalA.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            var dbPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            dbPath = System.IO.Path.Combine(dbPath, "EmployeeDetail.db3");
+
+            LoadApplication(new App(dbPath));
 
             return base.FinishedLaunching(app, options);
         }

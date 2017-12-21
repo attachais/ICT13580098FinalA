@@ -2,12 +2,164 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ICT13580098FinalA"
-             x:Class="ICT13580098FinalA.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="ICT13580098FinalA.MainPage"
+             Title="ICT13580098FinalA">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="New"
+            x:Name="newButton"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView
+        Orientation="Vertical">
+       
+
+    <ListView
+        x:Name="employeeListview"
+        RowHeight="300">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+
+                    <ViewCell.ContextActions>
+                        <MenuItem
+                            Text="Edit"
+                            CommandParameter="{Binding .}"
+                            Clicked="Edit_Clicked"/>
+
+                        <MenuItem
+                            Text="Delete"
+                            CommandParameter="{Binding .}"
+                            IsDestructive="True"
+                            Clicked="Delete_Clicked"/>
+                    </ViewCell.ContextActions>
+                   
+                     <StackLayout
+                            Orientation="Vertical"
+                            Padding="10">
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                        <Label
+                            Text="{Binding Name}"
+                            TextColor="#333"
+                            FontAttributes="Bold"
+                            FontSize="16"/>
+                        
+                            <Label
+                            Text="{Binding Lastname}"
+                            TextColor="#333"
+                            FontAttributes="Bold"
+                            FontSize="16"/>
+                                             
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="อายุ : "/>
+
+                            <Label
+                            Text="{Binding Age}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="เพศ : "/>
+
+                            <Label
+                            Text="{Binding Gender}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="แผนก : "/>
+
+                            <Label
+                            Text="{Binding Section}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="เบอร์โทร : "/>
+
+                            <Label
+                            Text="{Binding TellNo}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="อีเมล์ : "/>
+
+                            <Label
+                            Text="{Binding Email}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="ที่อยู่ : "/>
+
+                            <Label
+                            Text="{Binding Address}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="สถานะ : "/>
+
+                            <Label
+                            Text="{Binding Engage}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="จำนวนบุตร : "/>
+
+                            <Label
+                            Text="{Binding Child}"/>
+
+                        </StackLayout>
+
+                        <StackLayout
+                            Padding="10,0,10,0"
+                            Orientation="Horizontal">
+                            <Label
+                            Text="เงินเดือน : "/>
+
+                            <Label
+                            Text="{Binding Salary}"/>
+
+                        </StackLayout>
+                    </StackLayout>
+               
+                    
+                    
+                    
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
+</ScrollView>
 </ContentPage>
